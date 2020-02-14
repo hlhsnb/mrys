@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/hedaer.css">
+    <title>头部</title>
+</head>
+<body>
+<div class="header_top">
+    <div class="header_top_box">
+        <ul class="header_top_nav">
+            <li><a target="_blank" href="###">战网</a></li>
+            <li><a target="_blank" href="###">模特大赛</a></li>
+            <li><a target="_blank" href="###">美容大赏</a></li>
+            <li><a target="_blank" href="###">男人风尚</a></li>
+        </ul>
+        <!--登录后状态begin-->
+        <!--登录后状态end-->
+        <!--登录前状态begin-->
+        <div class="header_right header_land">
+            <a href="./login.html" target="_blank" id="login">登录</a>
+            <a href="javascript:void(0);" target="_blank" id="register">注册</a></div>
+        <!--登录前状态end-->
+    </div>
+</div>
+<div class="header_nav">
+    <div class="header_nav_box">
+        <!-- 战网LOGO -->
+        <div class="logo">
+            <a href="###">
+                <img alt="" src="###" width="140" height="55">
+            </a>
+        </div>
+        <!-- 导航栏 -->
+        <div class="zw_navs_">
+            <ul class="navs_box">
+                <li>
+                    <a target="_blank" href="javascript:void(0);">首页
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">刺客
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">李代桃僵</a></dd>
+                        <dd><a href="###">忽视闪避</a></dd>
+                        <dd><a href="###">飞鹰屠龙</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">神羿
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">没羽箭</a></dd>
+                        <dd><a href="###">长天刺</a></dd>
+                        <dd><a href="###">影之舞</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">狂战
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">天地同寿</a></dd>
+                        <dd><a href="###">万仞刀法</a></dd>
+                        <dd><a href="###">追风逐电</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">火法
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">天火燎原</a></dd>
+                        <dd><a href="###">赤焰心诀</a></dd>
+                        <dd><a href="###">火免疫</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">魔音
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">回光返照</a></dd>
+                        <dd><a href="###">邪恶之泉</a></dd>
+                        <dd><a href="###">催心琴</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">召唤
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">黑暗之力</a></dd>
+                        <dd><a href="###">快马加鞭</a></dd>
+                        <dd><a href="###">天魔步</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">霸王
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">升龙刺</a></dd>
+                        <dd><a href="###">暗影瞬袭</a></dd>
+                        <dd><a href="###">死亡呼唤</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <a target="_blank" href="javascript:void(0);">天骄
+                    </a>
+                    <dl class="zw_down">
+                        <dd><a href="###">空间涌动</a></dd>
+                        <dd><a href="###">狂野气魄</a></dd>
+                        <dd><a href="###">血雾风暴</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="nav_search_show">
+            <input type="text" name="searchContent" placeholder="请输入搜索的内容">
+            <div id="btn">
+                <img src="../images/common/search.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!--返回顶部-->
+<div class="reTop">
+    <img src="../images/common/toTop.jpg" alt="">
+</div>
+</body>
+</html>
+<script>
+    //  封装原生JS的ajax请求方法
+    function ajax_method(url, data, method, success) {
+        //  异步对象
+        var ajax = new XMLHttpRequest();
+        //  get和post需要区分
+        if (method == 'get') {
+            //  get请求
+            if (data) {
+                //  如果有值
+                url += '?';
+                url += data;
+            }
+            //  设置 方法 以及 Url
+            ajax.open(method, url);
+            //  发送
+            ajax.send();
+        } else {
+            //  post请求
+            //  post请求的Url不需要改变
+            ajax.open(method, url);
+
+            //  需要设置请求报文(请求头)
+            ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            //  判断data send发送数据
+            if (data) {
+                //  如果有值  从send发送
+                ajax.send(data);
+            } else {
+                //  没有值,直接发送
+                ajax.send();
+            }
+        }
+
+        //  注册事件
+        ajax.onreadystatechange = function () {
+            //  在事件中，获取数据，并修改界面显示
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                // console.log(ajax.responseText);
+
+                // 将 数据 让 外面可以使用
+                // return ajax.responseText;
+
+                // 当 onreadystatechange 调用时 说明 数据回来了
+                // ajax.responseText;
+
+                // 如果请求成功 外面可以传入一个 function 作为参数 success
+                success(ajax.responseText);
+            }
+        };
+    }
+
+    //  导航栏
+    {
+        let navs = document.querySelectorAll(".navs_box li");
+        navs.forEach(function (ele) {
+            ele.onmouseenter = function () {
+                ele.classList.add("active")
+            };
+            ele.onmouseleave = function () {
+                ele.classList.remove("active")
+            };
+        });
+    }
+
+    //  搜索
+    {
+        let searchBtn = document.querySelector(".nav_search_show #btn");
+        let searchTxt;
+        //  点击搜索按钮时触发
+        searchBtn.onclick = function (ele, index, e) {
+            searchTxt = document.querySelector(".nav_search_show input").value;
+            //  发起ajax请求
+            ajax_method('###', searchTxt, 'get', function () {
+                console.log(1);
+            })
+        }
+    }
+
+    //  返回顶部
+    {
+        let reTop = document.querySelector(".reTop");
+        window.addEventListener("scroll", function () {
+            if (document.scrollingElement.scrollTop > 1000) {
+                console.log(111);
+                reTop.classList.add("active")
+            } else {
+                reTop.classList.remove("active");
+            }
+        })
+        reTop.onclick = function () {
+            let num = document.scrollingElement.scrollTop;
+            setInterval(function () {
+                if (num <= 0) {
+                    return;
+                }
+                num -= 200;
+                window.scrollTo(0, num);
+                console.log(num);
+            }, 30);
+        }
+    }
+</script>

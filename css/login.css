@@ -1,0 +1,52 @@
+.login_box {
+    width: 1200px;
+    margin: 20px auto 0;
+}
+
+.login_left {
+    width: 700px;
+    height: 400px;
+    background-color: #9F5F9F;
+    float: left;
+}
+
+.login_right {
+    width: 400px;
+    float: right;
+}
+
+#login_form li {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+#login_form li label {
+    display: block;
+    position: relative;
+}
+
+#login_form li label input {
+    width: 300px;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+#submit_box {
+    text-align: center;
+}
+
+#submit_box input {
+    padding: 5px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+}

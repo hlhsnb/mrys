@@ -1,0 +1,294 @@
+@charset "utf-8";
+/* CSS Document */
+
+a:hover img {
+    /*opacity: 0.9;*/
+}
+
+a {
+    color: #1b1b1b;
+}
+
+
+body, div, p, ul, li, span, dl, dt, dd, a, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: 0 none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/*header*/
+div {
+    font-family: 'Microsoft YaHei';
+}
+
+.n17_fl {
+    float: left;
+}
+
+.n17_fr {
+    float: right;
+}
+
+.header_top {
+    height: 30px;
+    background: #fbfbfb;
+}
+
+.header_top_box {
+    height: 30px;
+    background: #fbfbfb;
+    margin: 0 auto;
+    position: relative;
+    font-size: 12px;
+}
+
+.header_top_nav {
+    float: left;
+    width: auto;
+    padding: 8px 0 0 10px;
+}
+
+.header_top_nav li {
+    padding-right: 14px;
+    float: left;
+}
+
+.header_top_nav li a {
+    color: #888;
+}
+
+.header_top_nav li a:hover {
+    color: #9F5F9F;
+}
+
+.header_login {
+    float: right;
+    color: #fff;
+    padding: 8px 10px 0 0;
+}
+
+.header_login a {
+    margin-left: 6px;
+    color: #888;
+}
+
+.header_right {
+    float: right;
+    display: inline;
+}
+
+.header_land {
+    color: #888;
+    padding: 7px 20px 0 0;
+    line-height: 18px;
+}
+
+.header_land img {
+    border: 0;
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    padding: 0;
+}
+
+.header_land a {
+    color: #888;
+    text-decoration: none;
+}
+
+
+.header_land.header_left {
+    margin: 0;
+    padding: 7px 0 0 20px;
+}
+
+.header_land.header_left a {
+    margin: 0;
+    padding: 0;
+    margin-right: 12px;
+}
+
+.header_land.header_right a {
+    margin: 0;
+    padding: 0;
+    margin-left: 19px;
+}
+
+.header_land a:hover {
+    color: #9F5F9F;
+    text-decoration: none;
+}
+
+.header_land.header_right img {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    margin-right: 0px;
+}
+
+
+/* 导航栏 */
+.header_nav {
+    height: 54px;
+    background: #fff;
+}
+
+.header_nav_box {
+    height: 54px;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header_nav_box .logo {
+    /*background-color: #9F5F9F;*/
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+.zw_navs {
+    float: left;
+    padding-top: 16px;
+}
+
+.navs_box li {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    z-index: 1000;
+    height: 56px;
+    line-height: 56px;
+}
+
+.navs_box li a {
+    display: block;
+    color: #000;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.navs_box li a:hover {
+    color: #9F5F9F;
+    /*transition: color 0.2s ease-in-out;*/
+    /*-webkit-transition: color 0.2s ease-in-out;*/
+}
+
+.navs_box li .zw_down {
+    min-width: 120px;
+    height: auto;
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    margin-left: -60px;
+    z-index: 1000;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.navs_box li.active .zw_down {
+    display: block;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    box-shadow: 0 0 2px #eee;
+}
+
+.navs_box .zw_down dd {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navs_box .zw_down dd a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.navs_box .zw_down dd a:hover {
+    background-color: #f5f5f5;
+}
+
+.zw_navs_line {
+    width: 15px;
+    height: 20px;
+    margin: 18px 15px 0 0;
+    border-right: 1px solid #f5f5f5;
+    float: left;
+}
+
+.nav_search_show {
+    width: auto;
+    height: 56px;
+    float: right;
+    position: relative;
+}
+
+.nav_search_show input {
+    width: 250px;
+    height: 40px;
+    background-color: #fff;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #000;
+    margin-top: 8px;
+}
+
+.nav_search_show div {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
+
+
+.nav_search_show img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/*返回顶部*/
+.reTop {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    z-index: 1002;
+    display: none;
+    cursor: pointer;
+}
+
+.reTop.active {
+    display: block;
+}
+
+.reTop img {
+    width: 100%;
+    height: 100%;
+}

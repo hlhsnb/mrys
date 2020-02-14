@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #fff;
+}
+
+a:hover img {
+    /*opacity: 0.9;*/
+}
+
+a {
+    color: #1b1b1b;
+}
+
+.index_banner {
+    width: 1180px;
+    height: auto;
+}
+
+body, div, p, ul, li, span, dl, dt, dd, a, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: 0 none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    font-size: 12px;
+    color: #b0b0b0;
+    border: 0;
+    list-style: none;
+}
+
+p {
+    list-style: none;
+    font-family: "苹方 粗体";
+}
+
+span {
+    list-style: none;
+    font-family: "苹方 粗体";
+}
+
+img {
+    color: #b0b0b0;
+}
+
+i {
+    color: #b0b0b0;
+}
+
+em {
+    font-style: normal;
+}
+
+html {
+    font-size: 100px;
+}
+
+
+/*响应式媒体查询*/
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px
+    }
+
+    .header_top_box {
+        width: 900px;
+    }
+
+    .header_nav_box {
+        width: 900px;
+    }
+
+    .wfooter_common {
+        width: 900px;
+    }
+
+    .all_content {
+        width: 900px;
+    }
+
+    .zw_box_body {
+        width: 900px;
+    }
+}
+/*>=1024的设备*/
+
+@media screen and (min-width: 1100px) {
+    body {
+        font-size: 20px
+    }
+
+    .header_top_box {
+        width: 1000px;
+    }
+
+    .header_nav_box {
+        width: 1000px;
+    }
+
+    .wfooter_common {
+        width: 1000px;
+    }
+
+    .all_content {
+        width: 1000px;
+    }
+
+    .zw_box_body {
+        width: 1000px;
+    }
+}
+/*>=1100的设备*/
+
+@media screen and (min-width: 1280px) {
+    body {
+        font-size: 22px;
+    }
+
+    .header_top_box {
+        width: 1100px;
+    }
+
+    .header_nav_box {
+        width: 1100px;
+    }
+
+    .wfooter_common {
+        width: 1100px;
+    }
+
+    .all_content {
+        width: 1100px;
+    }
+
+    .zw_box_body {
+        width: 1100px;
+    }
+}
+/*>=1280的设备*/
+
+@media screen and (min-width: 1366px) {
+
+    body {
+        font-size: 24px;
+    }
+
+    .header_top_box {
+        width: 1200px;
+    }
+
+    .header_nav_box {
+        width: 1200px;
+    }
+
+    .wfooter_common {
+        width: 1200px;
+    }
+
+    .all_content {
+        width: 1200px;
+    }
+
+    .zw_box_body {
+        width: 1200px;
+    }
+}
+/*>=1366的设备*/
+
+@media screen and (min-width: 1440px) {
+    body {
+        font-size: 25px;
+    }
+
+    .header_top_box {
+        width: 1300px;
+    }
+
+    .header_nav_box {
+        width: 1300px;
+    }
+
+    .wfooter_common {
+        width: 1300px;
+    }
+
+    .all_content {
+        width: 1300px;
+    }
+
+    .zw_box_body {
+        width: 1300px;
+    }
+}
+/*>=1440的设备*/
+
+@media screen and (min-width: 1680px) {
+    body {
+        font-size: 28px;
+    }
+
+    .header_top_box {
+        width: 1500px;
+    }
+
+    .header_nav_box {
+        width: 1500px;
+    }
+
+    .wfooter_common {
+        width: 1500px;
+    }
+
+    .all_content {
+        width: 1500px;
+    }
+
+    .zw_box_body {
+        width: 1500px;
+    }
+}
+/*>=1680的设备*/
+
+@media screen and (min-width: 1920px) {
+    body {
+        font-size: 33px;
+    }
+
+    .header_top_box {
+        width: 1800px;
+    }
+
+    .header_nav_box {
+        width: 1800px;
+    }
+
+    .wfooter_common {
+        width: 1800px;
+    }
+
+    .all_content {
+        width: 1800px;
+    }
+
+    .zw_box_body {
+        width: 1800px;
+    }
+}
+/*>=1920的设备*/
+
+.common_left {
+    float: left;
+    display: inline;
+}
+
+.common_right {
+    float: right;
+    display: inline;
+}

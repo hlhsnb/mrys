@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/common/basic.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>战</title>
+    <script src="../js/include.js"></script>
+    <script src="../js/jQuery.js"></script>
+</head>
+<!--audio模态框-->
+<style>
+    /*模态框的样式*/
+    .modal {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 99999;
+        opacity: 1;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: auto;
+    }
+
+    .none {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .modal > div {
+        width: 400px;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+
+    .yes, .no {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+    }
+
+    .no {
+        right: 24px;
+    }
+
+    .yes:hover, .no:hover {
+        background: #00d9ff;
+    }
+</style>
+<!--自动播放音乐,兼容Chrome写法-->
+<body>
+<!--模态框-->
+
+<div id="modal" loop="loop" class="none">
+    <div>
+        <a id="yes" href="javascript:void(0)" title="YES" class="yes">是</a>
+        <a id="no" href="javascript:void(0)" title="NO" class="no">否</a>
+        <h2>提示信息：</h2>
+        <p>是否允许本页中的音/视频自动播放？</p>
+    </div>
+</div>
+<include src="common/header.html"></include>
+<!--BGM-->
+<!--<embed src="./dna.mp3" width="300" height="100" autostart=true loop=true>-->
+<audio id="dna" src="./dna.mp3">
+    该浏览器不支持audio属性
+</audio>
+<!--全屏广告-->
+<div id="rui">
+    <img src="../images/index/first.gif" alt="">
+</div>
+<!--漂浮窗-->
+<div class="floating">
+    <img src="../images/index/yihu4.gif" alt="">
+</div>
+<!--主要内容-->
+<div class="all_content">
+    <!--轮播图-->
+    <div class="zw_box_body mainBan">
+        <ul class="banner_box">
+            <li class="active">
+                <a href="javascript:void(0)">
+                    <img src="../images/index/zuer2.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../images/index/pandeng.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../images/index/kris.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <div class="banner_slide_box">
+            <ul class="banner_slide">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <!--今日推荐-->
+    <div class="zw_box_body">
+        <div class="today_left common_left">
+            <ul class="today_banner">
+                <li class="active">
+                    <a href="javascript:void(0)">
+                        <img src="../images/index/today_banner1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="../images/index/today_banner2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="../images/index/today_banner3.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="today_banner_slide_box">
+                <ul class="today_banner_slide">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="today_content common_left">
+            <div class="today_img">
+                <img src="../images/index/today_img.png" alt="">
+            </div>
+            <ul class="today_list">
+                <li><a target="_blank" href="javascript:void(0)"><span class="s01"></span>国潮新风范！奔腾T99冠名今日头条时尚盛典</a></li>
+                <li><a target="_blank" href="javascript:void(0)"><span class="s02"></span>杨紫去美容整形医院待了一天？这也太拼了吧！</a></li>
+                <li><a target="_blank" href="javascript:void(0)"><span class="s03"></span>赖冠霖：比学长梁又年更可爱的多面男孩</a></li>
+                <li><a target="_blank" href="javascript:void(0)"><span class="s04"></span>美丽且真实的人间芭比吉娜！</a></li>
+                <li><a target="_blank" href="javascript:void(0)"><span class="s05"></span>霉霉和杨超越竟然都需要美白？！</a></li>
+                <li><a target="_blank" href="javascript:void(0)"><span class="s06"></span>[广告] 卸妆水界的“美少女战士”来啦！</a></li>
+            </ul>
+            <div class="today_push">
+                <div class="today_push_li common_left">
+                    <a href="javascript:void(0)" target="_blank" class="today_push_tit">活动精选</a>
+                    <a class="today_push_abox" href="javascript:void(0)" target="_blank">
+                        <img src="../images/index/today_push1.jpg">
+                        <div class="today_push_txt"><span>瑞丽星学院开班啦</span></div>
+                    </a>
+                </div>
+                <div class="today_push_li common_right">
+                    <a class="today_push_tit">商城推荐</a>
+                    <a class="today_push_abox" href="javascript:void(0)" target="_blank">
+                        <img src="../images/index/today_push2.jpg">
+                        <div class="today_push_txt"><span>瑞丽商城 好物精选</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="today_right common_right">
+            <img src="../images/index/today_right.jpg" alt="">
+        </div>
+    </div>
+    <!--饮食养生-->
+    <div class="zw_box_body">
+        <div class="ys_top_title">
+            <span>饮食养生</span>
+            <a href="javascript:void(0)" target="_blank">更多&gt;&gt;</a>
+        </div>
+        <div class="ys_left common_left">
+            <p>
+                <a href="javascript:void(0)">
+                    <img src="../images/index/yinshi1.jpg"
+                         data-original="../images/index/yinshi1.jpg"
+                         class="lazyload" alt="百香果泡水的正确方法 百香果泡水的好处" style="display: inline;">
+                    <em>百香果泡水的正确方法 百香果泡水的好处</em>
+                </a>
+            </p>
+            <ul>
+                <li><a href="javascript:void(0)l" title="孕妇必吃的12种水果 孕妇吃什么水果好" target="_blank">孕妇必吃的12种水果 孕妇吃什么水果好</a></li>
+                <li><a href="javascript:void(0)" title="牛油果怎么吃  牛油果的营养价值" target="_blank">牛油果怎么吃 牛油果的营养价值</a></li>
+                <li><a href="javascript:void(0)" title="雪莲果的正确吃法  吃雪莲果的禁忌" target="_blank">雪莲果的正确吃法 吃雪莲果的禁忌</a></li>
+            </ul>
+        </div>
+        <div class="ys_right common_right">
+            <div class="ys_content">
+                <a href="javascript:void(0)" title="鸡汤怎么炖好喝又营养 怎么熬鸡汤" target="_blank">
+                    <div class="ys_imgbox">
+                        <img src="../images/index/yinshi2.jpg" data-original="../images/index/yinshi2.jpg"
+                             class="lazyload" alt="鸡汤怎么炖好喝又营养 怎么熬鸡汤" style="display: inline;">
+                    </div>
+                    <div class="ys_textbox">
+                        <div class="ys_title">鸡汤怎么炖好喝又营养 怎么熬鸡汤</div>
+                        <div class="ys_desc">熬鸡汤的时候在选料上一定要选择新鲜的鸡，老母鸡味道更鲜美；另外炖煮的时候要注意把握时间和火候，时间不可太短也不可多长。</div>
+                        <div class="ys_time">2019-11-29</div>
+                    </div>
+                </a>
+            </div>
+            <div class="ys_content">
+
+                <a href="javascript:void(0)" title="六种超级降压食物 降血压的食物有哪些" target="_blank">
+                    <div class="ys_imgbox">
+                        <img src="../images/index/yinshi3.jpg"
+                             data-original="../images/index/yinshi3.jpg"
+                             class="lazyload" alt="六种超级降压食物 降血压的食物有哪些" style="display: inline;">
+                    </div>
+                    <div class="ys_textbox">
+                        <div class="ys_title">六种超级降压食物 降血压的食物有哪些</div>
+                        <div class="ys_desc">
+                            高血压患者发病时严重的可以导致死亡，然而现在越来越多的人不注意平时饮食，所以病情越来越严重。其实患有高血压的患者平时应该适量吃黑巧克力、红茶、香蕉、芹菜、无花果和海带等降血压的食物。
+                        </div>
+                        <div class="ys_time">2019-11-29</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <!--美妆-->
+    <div class="zw_box_body">
+        <div class="mz_toptitle">
+            <img src="../images/index/mz_top.png">
+        </div>
+        <div class="mz_box">
+            <ul class="mz_list">
+                <li class="mz_item">
+                    <div class="mz_second_title">
+                        <a href="javascript:void(0)" target="_blank">美妆评测</a>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show" style="display: none;">
+                            <p>· 干燥肌起死回生！韩国院线级补水神器测评</p>
+                        </div>
+                        <div class="mz_item_box" style="display: block;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_small1.png">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank" class="mz_item_eg_h3">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank" class="mz_item_eg_p">干燥肌起死回生！韩国院线级补水神器测评</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show">
+                            <p><a href="javascript:void(0)" target="_blank">· 全新花印「水光瓶」编辑亲测</a></p>
+                        </div>
+                        <div class="mz_item_box" style="display: none;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)" target="_blank">
+                                    <img src="../images/index/mz_item2.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">全新花印「水光瓶」编辑亲测</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show">
+                            <p><a href="javascript:void(0)" target="_blank">· 拯救熬夜少女肌肤的最佳CP——科丽蔓面膜</a></p>
+                        </div>
+                        <div class="mz_item_box" style="display: none;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)" target="_blank">
+                                    <img src="../images/index/mz_item2.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">拯救熬夜少女肌肤的最佳CP——科丽蔓面膜</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mz_item">
+                    <div class="mz_second_title">
+                        <a href="javascript:void(0)" target="_blank">美妆评测</a>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show" style="display: none;">
+                            <p>· 干燥肌起死回生！韩国院线级补水神器测评</p>
+                        </div>
+                        <div class="mz_item_box" style="display: block;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_small1.png">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank" class="mz_item_eg_h3">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank" class="mz_item_eg_p">干燥肌起死回生！韩国院线级补水神器测评</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show">
+                            <p><a href="javascript:void(0)" target="_blank">· 全新花印「水光瓶」编辑亲测</a></p>
+                        </div>
+                        <div class="mz_item_box" style="display: none;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)" target="_blank">
+                                    <img src="../images/index/mz_item2.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">全新花印「水光瓶」编辑亲测</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show">
+                            <p><a href="javascript:void(0)" target="_blank">· 拯救熬夜少女肌肤的最佳CP——科丽蔓面膜</a></p>
+                        </div>
+                        <div class="mz_item_box" style="display: none;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)" target="_blank">
+                                    <img src="../images/index/mz_item2.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">拯救熬夜少女肌肤的最佳CP——科丽蔓面膜</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mz_item last">
+                    <div class="mz_second_title">
+                        <a href="javascript:void(0)" target="_blank">美妆评测</a>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show" style="display: none;">
+                            <p>· 干燥肌起死回生！韩国院线级补水神器测评</p>
+                        </div>
+                        <div class="mz_item_box" style="display: block;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_small1.png">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank" class="mz_item_eg_h3">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank" class="mz_item_eg_p">干燥肌起死回生！韩国院线级补水神器测评</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show">
+                            <p><a href="javascript:void(0)" target="_blank">· 全新花印「水光瓶」编辑亲测</a></p>
+                        </div>
+                        <div class="mz_item_box" style="display: none;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)" target="_blank">
+                                    <img src="../images/index/mz_item2.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">全新花印「水光瓶」编辑亲测</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mz_content">
+                        <div class="mz_item_show">
+                            <p><a href="javascript:void(0)" target="_blank">· 拯救熬夜少女肌肤的最佳CP——科丽蔓面膜</a></p>
+                        </div>
+                        <div class="mz_item_box" style="display: none;">
+                            <div class="mz_item_img">
+                                <a href="javascript:void(0)" target="_blank">
+                                    <img src="../images/index/mz_item2.jpg">
+                                </a>
+                            </div>
+                            <div class="mz_item_eg">
+                                <div class="mz_item_eg_ps">
+                                    <img src="../images/index/mz_item1.jpg">
+                                </div>
+                                <div class="mz_item_eg_txt">
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">潮流达人：瑞丽评测中心</a>
+                                    <a href="javascript:void(0)" target="_blank"
+                                       class="mz_item_eg_p">拯救熬夜少女肌肤的最佳CP——科丽蔓面膜</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--专区-->
+    <div class="zw_box_body">
+        <div class="zq_toptitle">
+            <a href="javascript:void(0)" target="_blank">
+                <img src="http://images.rayli.com.cn/www/images/n17_tit_kowaves.png">
+            </a>
+        </div>
+        <div class="zq_upside common_left">
+            <ul class="zq_banner">
+                <li class="active">
+                    <a href="javascript:void(0)">
+                        <img src="../images/index/yihu1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="../images/index/yihu2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="../images/index/yihu3.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="zq_banner_slide_box">
+                <ul class="zq_banner_slide">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="zq_upright common_right">
+            <a target="_blank" href="javascript:void(0)">
+                <img src="http://uploads.rayli.com.cn/2019/1203/1575350812526.jpg">
+                <div class="zq_upright_txt">
+                    <p>热巴独家护肤小妙招</p>
+                </div>
+            </a>
+
+        </div>
+        <div class="zq_downleft common_left">
+            <li>
+                <a target="_blank" href="javascript:void(0)">
+                    <img src="http://uploads.rayli.com.cn/2019/0415/1555311438664.jpg">
+                    <div class="zq_down_txt">
+                        <p>瑞丽网独家采访刘昊然</p>
+                    </div>
+                    <div></div>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="javascript:void(0)">
+                    <img src="http://uploads.rayli.com.cn/2019/0415/1555311438664.jpg">
+                    <div class="zq_down_txt">
+                        <p>瑞丽网独家采访刘昊然</p>
+                    </div>
+                    <div></div>
+                </a>
+            </li>
+        </div>
+        <div class="zq_downright common_right">
+            <a  target="_blank" href="javascript:void(0)">
+                <img src="http://uploads.rayli.com.cn/2019/0415/thumb_360_254_1555311581103.jpg">
+                <div class="zq_down_txt">
+                    <p>热巴独家护肤小妙招</p>
+                </div>
+                <div></div>
+            </a>
+        </div>
+    </div>
+</div>
+<include src="common/footer.html"></include>
+</body>
+</html>
+<script src="../js/index.js"></script>
+<script src="../js/getData.js"></script>
+<script>
+</script>
